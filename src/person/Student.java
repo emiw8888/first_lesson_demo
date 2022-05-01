@@ -5,7 +5,7 @@ public class Student extends Person{
     short gpa;
     String faculty;
     String group;
-    String teacher;
+    Teacher teacher;
     static int count = 0;
     {
         count++;
@@ -14,7 +14,7 @@ public class Student extends Person{
 
     }
 
-    public Student(String name, String surname, short age, String university, short gpa, String faculty, String group, String teacher) {
+    public Student(String name, String surname, short age, String university, short gpa, String faculty, String group, Teacher teacher) {
         super(name, surname, age);
         this.university = university;
         this.gpa = gpa;
@@ -23,7 +23,13 @@ public class Student extends Person{
         this.teacher = teacher;
     }
 
-    int getObjectCount(){
+    @Override
+    public String toString() {
+        return   name + "\n" + surname + "\n" + age + "\n" +
+                 university + "\n" +  faculty + "\n" + group ;
+    }
+
+    static int getObjectCount(){
         return count;
     }
 }
