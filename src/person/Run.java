@@ -2,6 +2,7 @@ package person;
 
 import multidimensional.Multidimensional;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Run {
@@ -29,9 +30,9 @@ public class Run {
             System.out.println("please enter same numbers for both of them");
         }
         Multidimensional mt = new Multidimensional(rowSize,columnSize);
-        mt.enterValuesFromConsole();
-        System.out.println(mt.findFirstDiagonalElements());
-        System.out.println(mt.findSecondDiagonalElemenets());
+        mt.enterValuesFromConsole(sc);
+        System.out.println(Arrays.toString(mt.findFirstDiagonalElements()));
+        System.out.println(Arrays.toString(mt.findSecondDiagonalElemenets()));
         mt.printArrayElementsinMatrixFormat();
     }
 }
