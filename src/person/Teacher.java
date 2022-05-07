@@ -5,7 +5,7 @@ import java.util.Locale;
 public class Teacher extends Person{
     String workPlace;
     short experience;
-    Student[] student;
+    Student[] students;
     Teacher(){
 
     }
@@ -14,16 +14,15 @@ public class Teacher extends Person{
         super(name, surname, age);
         this.workPlace = workPlace;
         this.experience = experience;
-        this.student = student;
+        this.students = student;
     }
 
+
     void displayStudentByGroupName(String group){
-        for (int i = 0; i < student.length; i++) {
-            if(student[i].group.equals(group.toUpperCase())){
-                System.out.println(student[i].name);
-                System.out.println(student[i].surname);
-                System.out.println(student[i].faculty);
-                System.out.println(student[i].university);
+
+        for (Student student :students ) {
+            if(student.group.equals(group.toUpperCase())){
+                System.out.println(student.toString());
             }
         }
     }
