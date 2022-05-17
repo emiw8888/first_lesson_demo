@@ -19,21 +19,22 @@ public class RightLeftArray {
         k = k < 0 ? k * -1 : k;
         System.out.println("choose side");
         String s = sc.next();
-        int[] newArr = new int[arr.length];
+        int a;
         switch (s.toLowerCase()) {
             case "left":
+                // 1 2 3 4 5
                 for (int j = 0; j < arr.length; j++)
-                    newArr[(j - k) < 0 ? (j - k) + n : j - k] = arr[j];
+                    arr[(j - k) < 0 ? (j - k) + n : j - k] = arr[j];
                 break;
             case "right":
                 for (int j = 0; j < arr.length; j++)
-                    newArr[(j + k) > n - 1 ? (j + k) - n : j + k] = arr[j];
+                    arr[(j + k) > n - 1 ? (j + k) - n : j + k] = arr[j];
                 break;
             default:
                 System.out.println("wrong insert");
         }
         for (int i = 0; i < n; i++) {
-            System.out.print(newArr[i] + " ");
+            System.out.print(arr[i] + " ");
         }
     }
 }
